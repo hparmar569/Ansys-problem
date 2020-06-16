@@ -1,0 +1,70 @@
+import java.util.Scanner;
+public class MyClass {
+    public static void main(String args[]) {
+      Scanner sc=new Scanner(System.in);
+      String stringSent=sc.next();
+      int n=stringSent.length();
+      String stringRec=sc.next();
+      int m=stringRec.length();
+      String str3="";
+      int found=0;
+      for(int i=0;i<n;i++)
+      {
+          found=0;
+          for(int j=0;j<m;j++)
+          {
+              if(stringSent.charAt(i)==stringRec.charAt(j))
+              {
+                  found=1;
+                  stringRec=stringRec.replace(stringSent.charAt(i),'0');
+                  break;
+              }
+              
+          }
+          if(found==0)
+              {
+                  str3=str3+stringSent.charAt(i);
+              }
+      }
+
+      System.out.println(str3);
+    }
+}
+
+
+import java.util.Scanner;
+public class MyClass {
+    public static void main(String args[]) {
+      Scanner sc=new Scanner(System.in);
+      String str=sc.nextLine();
+      int n=str.length();
+      String str2="";
+      for(int i=0;i<n;i++)
+      {
+          if(str.charAt(i)==' ')
+          continue;
+          
+          else
+          str2=str2+str.charAt(i);
+      }
+     int m=str2.length();
+     int countSpecial=0;
+     for(int i=0;i<m;i++)
+     {
+         char ch=str.charAt(i);
+         if(ch>='a' && ch<='z' ||  ch>='A' && ch<='Z')
+         {
+             continue;
+         }
+         
+         else if(ch>='0' && ch<='9')
+         
+         {
+             continue;
+         }
+         else
+         countSpecial++;
+     }
+     System.out.println(countSpecial);
+}
+}
